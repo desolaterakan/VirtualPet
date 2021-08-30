@@ -1,5 +1,4 @@
 void setup() {
-  System.out.println("swag");
   size(400, 400);
   background(100, 0, 255);
   strokeWeight(3);
