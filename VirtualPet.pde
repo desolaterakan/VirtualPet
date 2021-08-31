@@ -13,6 +13,9 @@ void draw() {
   // arduino
   background(100, 0, 255);
   int y = (arduino.analogRead(5))/5;
+  if (y > 20) {
+    y = 20;
+  }
   System.out.println(y);
   
   // feet
