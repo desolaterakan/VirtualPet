@@ -1,23 +1,10 @@
-import processing.serial.*;
-import cc.arduino.*;
-Arduino arduino;
-
 void setup() {
   size(400, 400);
   background(100, 0, 255);
   strokeWeight(3);
-  arduino = new Arduino(this, Arduino.list()[0], 57600);
 }
 
 void draw() {
-  // arduino
-  background(100, 0, 255);
-  int y = (arduino.analogRead(5))/5;
-  if (y > 20) {
-    y = 20;
-  }
-  System.out.println(y);
-  
   // feet
   fill(0, 255, 0);
   ellipse(185, 235, 60, 20);
@@ -36,25 +23,25 @@ void draw() {
   
   // head
   fill(0, 255, 0);
-  ellipse(200, 150-y, 125, 100);
+  ellipse(200, 150, 125, 100);
   
-  arc(165, 115-y, 50, 50, 2.5, 6.5);
-  arc(235, 115-y, 50, 50, 2.9, 6.9);
+  arc(165, 115, 50, 50, 2.5, 6.5);
+  arc(235, 115, 50, 50, 2.9, 6.9);
   
   // face
   fill(0, 0, 0);
-  ellipse(165, 115-y, 10, 10);
-  line(230, 115-y, 240, 115-y);
-  line(230, 115-y, 240, 110-y);
+  ellipse(165, 115, 10, 10);
+  line(230, 115, 240, 115);
+  line(230, 115, 240, 110);
   
   fill(255, 0, 0);
-  ellipse(160, 150-y, 30, 30);
-  ellipse(240, 150-y, 30, 30);
+  ellipse(160, 150, 30, 30);
+  ellipse(240, 150, 30, 30);
   
-  line(190, 150-y, 200, 155-y);
-  line(210, 150-y, 200, 155-y);
+  line(190, 150, 200, 155);
+  line(210, 150, 200, 155);
   
   // tongue
   fill(255, 0, 200);
-  arc(200, 157-y, 20, 20, 5.8, 9.9);
+  arc(200, 157, 20, 20, 5.8, 9.9);
 }
